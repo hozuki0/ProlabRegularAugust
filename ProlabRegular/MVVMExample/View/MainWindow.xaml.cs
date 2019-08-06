@@ -13,16 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMExample
+namespace MVVMExample.View
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly ViewModel.MainViewModel ViewModel = new ViewModel.MainViewModel();
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = ViewModel;
         }
     }
 }
