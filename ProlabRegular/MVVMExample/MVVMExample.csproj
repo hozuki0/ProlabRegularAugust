@@ -90,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IO\SerializableStatus.cs" />
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="Share\RelayCommand.cs" />
     <Compile Include="Share\UtilityCommands.cs" />

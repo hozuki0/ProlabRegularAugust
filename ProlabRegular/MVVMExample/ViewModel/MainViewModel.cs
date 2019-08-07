@@ -27,11 +27,11 @@ namespace MVVMExample.ViewModel
             ("../../Resources/Green.png"),
         };
 
-        public ReactiveProperty<int> ID { get; set; } = new ReactiveProperty<int>();
-        public ReactiveProperty<int> HP { get; set; } = new ReactiveProperty<int>();
-        public ReactiveProperty<int> Attack { get; set; } = new ReactiveProperty<int>();
-        public ReactiveProperty<int> Deffence { get; set; } = new ReactiveProperty<int>();
-        public ReactiveProperty<int> Speed { get; set; } = new ReactiveProperty<int>();
+        public ReactiveProperty<int> ID => MainModel.ID;
+        public ReactiveProperty<int> HP => MainModel.HP;
+        public ReactiveProperty<int> Attack => MainModel.Attack;
+        public ReactiveProperty<int> Deffence => MainModel.Deffence;
+        public ReactiveProperty<int> Speed => MainModel.Speed;
 
         public ReactiveProperty<string> Selected { get; set; } = new ReactiveProperty<string>();
 
@@ -45,8 +45,11 @@ namespace MVVMExample.ViewModel
             {
                 return new Share.RelayCommand(_ =>
                 {
-                    var sfd = new SaveFileDialog();
-                    if(sfd.ShowDialog() == DialogResult.OK)
+                    var sfd = new SaveFileDialog()
+                    {
+                        FileName = $"{ID.Value}.json"
+                    };
+                    if (sfd.ShowDialog() == DialogResult.OK)
                     {
                         MainModel.Save(sfd.FileName);
                     }
