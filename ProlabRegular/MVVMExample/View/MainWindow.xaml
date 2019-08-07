@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMExample.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Status" Height="250" Width="300">
     <Grid>
-        
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Icon:"/>
+                <Image Source="{Binding Icon.Value}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="ID:"/>
+                <TextBox Text="{Binding ID.Value}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="HP:"/>
+                <TextBox Text="{Binding HP.Value}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Attack:"/>
+                <TextBox Text="{Binding Attack.Value}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Deffence:"/>
+                <TextBox Text="{Binding Deffence.Value}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Speed:"/>
+                <TextBox Text="{Binding Speed.Value}"/>
+            </StackPanel>
+
+            <ComboBox ItemsSource="{Binding Images}" SelectedValue="{Binding Selected.Value}"/>
+            <Button Command="{Binding Save}" IsEnabled="{Binding Saveable.Value}" Content="Save"/>
+        </StackPanel>
     </Grid>
 </Window>

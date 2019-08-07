@@ -49,6 +49,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.4.1.5\lib\net46\System.Reactive.dll</HintPath>
     </Reference>
@@ -90,6 +91,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\MainModel.cs" />
+    <Compile Include="Share\RelayCommand.cs" />
+    <Compile Include="Share\UtilityCommands.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -123,8 +126,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Share\" />
+    <Resource Include="Resources\Black.png" />
+    <Resource Include="Resources\Blue.png" />
+    <Resource Include="Resources\Green.png" />
+    <Resource Include="Resources\Red.png" />
+    <Resource Include="Resources\White.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
