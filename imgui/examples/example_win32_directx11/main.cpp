@@ -238,3 +238,51 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
     }
     return ::DefWindowProc(hWnd, msg, wParam, lParam);
 }
+
+
+/*Interface*/ class IObject
+{
+public:
+    virtual void Initialize() = 0;
+
+    virtual void Update() = 0;
+    virtual void Render() = 0;
+
+    virtual void OnHit(IObject* object) = 0;
+
+    virtual bool IsDead() = 0;
+};
+
+/*Interface*/ class ICommand
+{
+public:
+    virtual bool CanExecute() = 0;
+    virtual void Execute() = 0;
+};
+
+class Monster
+{
+public:
+private:
+    int ID = {};
+    int HP = {};
+    int Attack = {};
+    int Deffence = {};
+    int Speed = {};
+};
+
+
+class VMonster : public IObject
+{
+public:
+
+private:
+    int ID = {};
+    int HP = {};
+    int Attack = {};
+    int Deffence = {};
+    int Speed = {};
+};
+
+constexpr size_t MONSTER_SIZE = sizeof(Monster);
+constexpr size_t VMONSTER_SIZE = sizeof(VMonster);
